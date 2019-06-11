@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Result</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="../../static/css/style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="../../static/css/coin-slider.css" />
+<script type="text/javascript" src="../../static/js/cufon-yui.js"></script>
+<script type="text/javascript" src="../../static/js/cufon-georgia.js"></script>
+<script type="text/javascript" src="../../static/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="../../static/js/script.js"></script>
+<script type="text/javascript" src="../../static/js/coin-slider.min.js"></script>
+
+<style type="text/css">
+
+.button {
+position: relative;
+display: block;
+width: 200px;
+height: 36px;
+border-radius: 18px;
+background-color: #1c89ff;
+border: solid 1px transparent;
+color: #fff;
+font-size: 18px;
+font-weight: 300;
+cursor: pointer;
+transition: all .1s ease-in-out;
+}
+&:hover {
+  background-color: transparent;
+  border-color: #fff;
+  transition: all .1s ease-in-out;
+}
+
+
+.loader {
+display: flex;
+justify-content: center;
+align-items: center;
+width: 50px;
+height: 50px;
+background: transparent;
+margin: 30px auto 0 auto;
+border: solid 2px #424242;
+border-top: solid 2px #1c89ff;
+border-radius: 50%;
+opacity: 0;
+}
+
+.check {
+width: 100%;
+height: 100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+transform: translate3d(-4px,50px,0);
+opacity: 0;
+}
+span:nth-child(1) {
+  display: block;
+  width: 10px;
+  height: 2px;
+  background-color: #fff;
+  transform: rotate(45deg);
+}
+span:nth-child(2) {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: #fff;
+  transform: rotate(-45deg) translate3d(14px, -4px, 0);
+  transform-origin: 100%;
+}
+
+.loader.active {
+animation: loading 2s ease-in-out;
+animation-fill-mode: forwards;
+}
+
+.check.active {
+opacity: 1;
+transform: translate3d(-4px,4px,0);
+transition: all .5s cubic-bezier(.49, 1.74, .38, 1.74);
+transition-delay: .2s;
+}
+
+@keyframes loading {
+30% {
+  opacity:1;
+}
+85% {
+  opacity:1;
+  transform: rotate(1080deg);
+  border-color: #262626;
+}
+100% {
+  opacity:1;
+  transform: rotate(1080deg);
+   border-color: #1c89ff;
+}
+}
+</style>
+
+</head>
+<body>
+<div class="main">
+  <div class="header">
+    <div class="header_resize">
+      <div class="menu_nav">
+        <ul>
+          <li><a href="http://127.0.0.1:8000/"><span>Home</span></a></li>
+        </ul>
+      </div>
+      <div class="logo">
+      </div>
+      <div class="clr"></div>
+      <div class="slider">
+        <div id="coin-slider">
+            <img src="../../static/images/slide1.jpg" width="960" height="360" alt="" />
+            <img src="../../static/images/slide2.jpg" width="960" height="360" alt="" />
+
+        </div>
+        <div class="clr"></div>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+  <div class="content">//
+    <div class="content_resize">
+      <div class="mainbar">
+        <div class="article">
+          <h2>Matches</h2>
+          <table style="font-size: 16px;color:black;width:100%;text-align:center;">
+            <tr>
+              <th>From Frame</th>
+              <th>Text</th>
+            </tr>
+            {% for d in data %}
+            <tr>
+              <td>{{d.0}}</td>
+              <td>{{d.1}}</td>
+            </tr>
+            {% empty %}
+            <caption>
+              <h2>No result to show</h2>
+            </caption>
+            {% endfor %}
+          </table>
+          <div class="clr"></div>
+        </div>
+        <div class="article">
+          <h2>Result</h2>
+          <p>
+            <h3 style="color:black;">Number of frames matched : {{data|length}}</h3><hr/>
+            <h1 style="color:black;">{{result}}</h1>
+          </p>
+        </div>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+  <div class="fbg">
+    <div class="fbg_resize">
+
+      <div class="clr"></div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="footer_resize">
+
+      <div style="clear:both;"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
