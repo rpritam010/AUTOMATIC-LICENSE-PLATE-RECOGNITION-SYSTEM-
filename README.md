@@ -8,3 +8,20 @@ sorry for not uploading the base papers that is due to my mistake ,
 now we have updated all the related papers which we got from the internet.
 
 very soon we will be releasing the 1st view of the project
+
+
+
+
+11/06/2019
+
+
+The project is finally over
+
+steps:-
+python merge.py makemigrations
+
+
+python merge.py migrate
+
+
+python merge.py runserver
