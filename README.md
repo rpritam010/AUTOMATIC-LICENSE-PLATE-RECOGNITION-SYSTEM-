@@ -25,3 +25,16 @@ python merge.py migrate
 
 
 python merge.py runserver
+
+
+
+
+
+googlederive link:-
+link:-https://drive.google.com/open?id=1LU_ftJ91H8EW_Szn-ri0JvnthKSgR5vF
+
+
+in case of any issue contact me
+name:-PRITAM RAJ
+EMAIL:-PRITAMRAJBPS@GMAIL.COM
+MOBILE NO:- +918969650244
